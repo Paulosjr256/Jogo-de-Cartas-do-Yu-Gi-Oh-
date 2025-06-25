@@ -123,14 +123,25 @@
   margin-top: -5%;
 }
 
-/*
-.rpgui-button.golden:hover:before {
-
-  background-image: url('img/button-golden-left-hover.png');
+.start-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #3a3a3a, #5c5c5c);
+  border: 2px solid gold;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 0 15px gold;
+}
+.start-button:hover {
+  background: gold;
+  color: black;
+  box-shadow: 0 0 25px gold;
 }
 
-.rpgui-button.golden:hover:after {
-
-  background-image: url('img/button-golden-right-hover.png');
-}
-*/
