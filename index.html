@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu-Gi-Oh! - Jo-ken-po Edition</title>
+    <link rel="stylesheet" href="src/styles/reset.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/buttons.css">
+    <link rel="stylesheet" href="src/styles/containers_and_frames.css">
+    <link rel="icon" type="image/x-icon" href="src/assets/favicon/Favicon.ico">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1 class="game-title">Yu-Gi-Oh!</h1>
+            <p class="game-subtitle">Jo-ken-po Edition</p>
+        </header>
+
+        <main class="game-main">
+            <div class="score-board">
+                <div class="player-score">
+                    <h3>Jogador</h3>
+                    <span id="player-score">0</span>
+                </div>
+                <div class="computer-score">
+                    <h3>Computador</h3>
+                    <span id="computer-score">0</span>
+                </div>
+            </div>
+
+            <div class="battle-field">
+                <div class="player-field">
+                    <div class="card-slot" id="player-card">
+                        <img src="src/assets/icons/card-back.png" alt="Carta do Jogador" class="card-image">
+                    </div>
+                    <h3>Jogador</h3>
+                </div>
+
+                <div class="vs-section">
+                    <div class="vs-text">VS</div>
+                    <div class="round-info">
+                        <span id="round-number">Rodada 1</span>
+                    </div>
+                </div>
+
+                <div class="computer-field">
+                    <div class="card-slot" id="computer-card">
+                        <img src="src/assets/icons/card-back.png" alt="Carta do Computador" class="card-image">
+                    </div>
+                    <h3>Computador</h3>
+                </div>
+            </div>
+
+            <div class="card-selection">
+                <h3>Escolha sua carta:</h3>
+                <div class="card-options">
+                    <button class="card-option" data-card="pedra">
+                        <img src="src/assets/icons/dragon.png" alt="Pedra" class="card-option-image">
+                        <span>Pedra (1)</span>
+                    </button>
+                    <button class="card-option" data-card="papel">
+                        <img src="src/assets/icons/magician.png" alt="Papel" class="card-option-image">
+                        <span>Papel (2)</span>
+                    </button>
+                    <button class="card-option" data-card="tesoura">
+                        <img src="src/assets/icons/exodia.png" alt="Tesoura" class="card-option-image">
+                        <span>Tesoura (3)</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <button id="new-game-btn" class="btn btn-primary">Nova Partida (R)</button>
+                <button id="rules-btn" class="btn btn-secondary">Regras (H)</button>
+            </div>
+        </main>
+
+        <div class="keyboard-hints">
+            <h4>🎮 Controles</h4>
+            <ul>
+                <li><strong>1, 2, 3:</strong> Escolher carta</li>
+                <li><strong>R:</strong> Nova partida</li>
+                <li><strong>H:</strong> Ver regras</li>
+                <li><strong>ESC:</strong> Fechar modais</li>
+            </ul>
+        </div>
+
+        <div id="result-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="result-title">Resultado</h2>
+                <p id="result-message">Mensagem do resultado</p>
+                <div class="modal-buttons">
+                    <button id="continue-btn" class="btn btn-primary">Continuar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="rules-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Regras do Jogo</h2>
+                <div class="rules-content">
+                    <p>Este é um jogo de Jo-ken-po (Pedra, Papel, Tesoura) com tema Yu-Gi-Oh!</p>
+                    <ul>
+                        <li><strong>Pedra (Dragon):</strong> Representada pelo dragão azul</li>
+                        <li><strong>Papel (Magician):</strong> Representado pelo mago</li>
+                        <li><strong>Tesoura (Exodia):</strong> Representada pelo Exodia</li>
+                    </ul>
+                    <h3>Como Jogar:</h3>
+                    <ul>
+                        <li>Escolha uma das três cartas clicando nelas ou usando as teclas 1, 2, 3</li>
+                        <li>O computador escolherá aleatoriamente</li>
+                        <li>Pedra vence Tesoura</li>
+                        <li>Papel vence Pedra</li>
+                        <li>Tesoura vence Papel</li>
+                        <li>Empate se ambos escolherem a mesma carta</li>
+                    </ul>
+                    <h3>Sistema de Poder:</h3>
+                    <ul>
+                        <li><strong>Vitória:</strong> +15 pontos de poder</li>
+                        <li><strong>Derrota:</strong> +10 pontos de poder</li>
+                        <li><strong>Empate:</strong> +5 pontos de poder</li>
+                        <li>Chegue a 100 para ativar o <strong>Modo Dourado!</strong></li>
+                    </ul>
+                </div>
+                <div class="modal-buttons">
+                    <button id="close-rules-btn" class="btn btn-primary">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/scripts/engine.js"></script>
+</body>
+</html>
