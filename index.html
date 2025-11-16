@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- reset css  -->
+    <link rel="stylesheet" href="./src/styles/reset.css">
+
+    <!-- framework  -->
+    <link rel="stylesheet" href="./src/styles/buttons.css">
+    <link rel="stylesheet" href="./src/styles/containers_and_frames.css">
+
+    <!--  Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- main style  -->
+    <link rel="stylesheet" href="./src/styles/main.css">
+
+    <title>Yu-Gi-OH Jo-Ken-Po Edition</title>
+</head>
+<body>
+    <div class="game-container framed-golden">
+        <h1>Yu-Gi-Oh Jo-Ken-Po</h1>
+        <div class="choices">
+            <h2>Escolha sua carta:</h2>
+            <div class="player-choices">
+                <button class="rpgui-button golden choice-btn" data-choice="dragon">
+                    <img src="./src/assets/icons/dragon.png" alt="Dragão (Pedra)">
+                    <span>Dragão</span>
+                </button>
+                <button class="rpgui-button golden choice-btn" data-choice="magician">
+                    <img src="./src/assets/icons/magician.png" alt="Mago (Papel)">
+                    <span>Mago</span>
+                </button>
+                <button class="rpgui-button golden choice-btn" data-choice="exodia">
+                    <img src="./src/assets/icons/exodia.png" alt="Exodia (Tesoura)">
+                    <span>Exodia</span>
+                </button>
+            </div>
+        </div>
+        <div class="battle-area">
+            <div class="player-side">
+                <h3>Jogador</h3>
+                <div class="card-display" id="player-card"></div>
+            </div>
+            <div class="vs">VS</div>
+            <div class="computer-side">
+                <h3>Computador</h3>
+                <div class="card-display" id="computer-card"></div>
+            </div>
+        </div>
+        <div class="result" id="result"></div>
+        <button class="rpgui-button golden" id="reset-btn" style="display: none;">Jogar Novamente</button>
+    </div>
+
+    <script src="./src/scripts/engine.js" defer></script>
+</body>
+</html>
